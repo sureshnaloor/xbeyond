@@ -6,6 +6,8 @@ import MainNav from "@/components/main-nav"
 import ChatButton from "@/components/chat-button"
 import ServiceCard from "@/components/service-card"
 import StatsCounter from "@/components/stats-counter"
+import {CldImage} from 'next-cloudinary'
+import HeroImage from "@/components/landingpageimages/hero-image"
 
 export default function Home() {
   return (
@@ -13,7 +15,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="font-bold text-xl">EnergyTech</div>
+            <div className="font-bold text-xl">xBeyond</div>
           </Link>
           <MainNav className="mx-6" />
           <div className="ml-auto flex items-center space-x-4">
@@ -32,11 +34,10 @@ export default function Home() {
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Leading Solutions for the Energy Industry
+                  Digital Transformation Solutions for Construction & EPC Industry
                 </h1>
                 <p className="max-w-[600px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Providing comprehensive services in Oil & Gas, Petrochemicals, Manpower, and Energy Projects with a
-                  commitment to excellence and innovation.
+                  Revolutionizing construction and EPC projects with AI-powered solutions, digital process automation, and intelligent project management systems.
                 </p>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button size="lg" asChild>
@@ -50,17 +51,13 @@ export default function Home() {
                     className="border-white text-white hover:bg-white hover:text-slate-900"
                     asChild
                   >
-                    <Link href="/projects">View Projects</Link>
+                    {/* <Link href="/projects">View Projects</Link> */}
                   </Button>
                 </div>
               </div>
               <div className="flex justify-center">
                 <div className="relative w-full max-w-[500px] aspect-video rounded-xl overflow-hidden">
-                  <img
-                    src="/placeholder.svg?height=400&width=600"
-                    alt="Oil and gas facility"
-                    className="object-cover w-full h-full"
-                  />
+                  <HeroImage />
                 </div>
               </div>
             </div>
@@ -70,12 +67,7 @@ export default function Home() {
         {/* Stats Section */}
         <section className="w-full py-12 md:py-16 bg-slate-50">
           <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <StatsCounter value={25} label="Years Experience" />
-              <StatsCounter value={500} label="Projects Completed" />
-              <StatsCounter value={30} label="Countries Served" />
-              <StatsCounter value={1200} label="Professionals" />
-            </div>
+           
           </div>
         </section>
 
@@ -86,7 +78,7 @@ export default function Home() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Services</h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Comprehensive solutions tailored to meet the diverse needs of the energy sector
+                  Comprehensive solutions tailored to meet the diverse needs of the Construction Projects sector
                 </p>
               </div>
             </div>
@@ -99,7 +91,7 @@ export default function Home() {
               <ServiceCard
                 title="Petrochemicals"
                 description="Manufacturing and processing of petrochemical products with cutting-edge technology."
-                icon="Flask"
+                icon="Beaker"
               />
               <ServiceCard
                 title="Manpower Services"
@@ -134,50 +126,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <section className="w-full py-12 md:py-24 bg-slate-50">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Featured Projects</h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Explore our portfolio of successful energy projects across the globe
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
-              {[1, 2, 3].map((i) => (
-                <Card key={i} className="overflow-hidden">
-                  <div className="relative h-48">
-                    <img
-                      src={`/placeholder.svg?height=300&width=400`}
-                      alt={`Project ${i}`}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle>Offshore Platform {i}</CardTitle>
-                    <CardDescription>Gulf of Mexico</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-gray-500">
-                      Complete engineering, procurement, and construction of an offshore drilling platform.
-                    </p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button variant="outline" size="sm" asChild>
-                      <Link href={`/projects/${i}`}>View Details</Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-            <div className="flex justify-center mt-8">
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/projects">
-                  View All Projects <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
+         
         </section>
 
         {/* CTA Section */}
@@ -186,11 +135,10 @@ export default function Home() {
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Ready to Transform Your Energy Operations?
+                  Ready to Digitize Your Construction Operations?
                 </h2>
                 <p className="max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Partner with us for innovative solutions that drive efficiency, sustainability, and growth in your
-                  energy business.
+                  Partner with us to leverage AI and automation for enhanced efficiency, accuracy, and project success in your construction business.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-end">
@@ -212,9 +160,9 @@ export default function Home() {
         <div className="container px-4 py-8 md:px-6 md:py-12">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
             <div className="col-span-2">
-              <div className="font-bold text-xl mb-4">EnergyTech</div>
+              <div className="font-bold text-xl mb-4">xBeyond</div>
               <p className="text-gray-400 max-w-xs">
-                Leading provider of comprehensive solutions for the Oil & Gas and Energy sectors worldwide.
+                Leading provider of comprehensive solutions for the Construction and EPC sectors worldwide.
               </p>
             </div>
             <div>
@@ -289,7 +237,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400">© {new Date().getFullYear()} EnergyTech. All rights reserved.</p>
+            <p className="text-sm text-gray-400">© {new Date().getFullYear()} xBeyond. All rights reserved.</p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <Link href="#" className="text-gray-400 hover:text-white">
                 <span className="sr-only">Twitter</span>
