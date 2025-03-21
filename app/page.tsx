@@ -1,22 +1,22 @@
 import Link from "next/link"
-import { ChevronRight, ArrowRight } from "lucide-react"
+import { ChevronRight, ArrowRight, Database, Building2, BarChart2, Network, Contact, Wrench } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import MainNav from "@/components/main-nav"
 import ChatButton from "@/components/chat-button"
 import ServiceCard from "@/components/service-card"
 import StatsCounter from "@/components/stats-counter"
-import {CldImage} from 'next-cloudinary'
+import Logo from "@/components/logo"
+// Remove the CldImage import as it's now in the Logo component
 import HeroImage from "@/components/landingpageimages/hero-image"
+import RollingCredentials from "@/components/rolling-credentials"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="font-bold text-xl">xBeyond</div>
-          </Link>
+          <Logo />
           <MainNav className="mx-6" />
           <div className="ml-auto flex items-center space-x-4">
             <Button asChild variant="outline">
@@ -82,36 +82,55 @@ export default function Home() {
                 </p>
               </div>
             </div>
+            {/* In the services section, update the ServiceCard components: */}
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
               <ServiceCard
-                title="Oil & Gas"
-                description="Exploration, production, and distribution services for the petroleum industry."
-                icon="Droplet"
+                title="Asset Management"
+                slogan="Smart Tracking, Smarter Business"
+                description="Intelligent asset tracking and maintenance system that helps companies monitor, maintain, and optimize their movable assets with real-time insights and predictive analytics."
+                iconName="Database"
+                bgClass="bg-gradient-to-br from-blue-600 via-blue-500 to-teal-400"
+                tag="SMARTTAG"
               />
               <ServiceCard
-                title="Petrochemicals"
-                description="Manufacturing and processing of petrochemical products with cutting-edge technology."
-                icon="Beaker"
+                title="Construction Management"
+                slogan="Building Tomorrow, Digitally"
+                description="End-to-end project management platform offering real-time control, monitoring, and analytics for construction projects of any scale."
+                iconName="Building2"
+                bgClass="bg-gradient-to-br from-teal-500 via-teal-400 to-green-300"
+                tag="SMARTPROJECT"
               />
               <ServiceCard
-                title="Manpower Services"
-                description="Specialized recruitment and staffing solutions for energy sector professionals."
-                icon="Users"
+                title="Operations Excellence"
+                slogan="Optimize, Track, Thrive"
+                description="Advanced inventory management system with AI-powered cataloging, waste reduction, and smart classification of materials and spares to maximize operational efficiency."
+                iconName="BarChart2"
+                bgClass="bg-gradient-to-br from-blue-500 via-blue-400 to-sky-300"
+                tag="SMARTCLASS"
+              />
+              <ServiceCard
+                title="Supply Chain Solutions"
+                slogan="Connect, Control, Succeed"
+                description="Comprehensive vendor management and mini-ERP system for streamlined contract management, strategic sourcing, and efficient procurement processes."
+                iconName="Network"
+                bgClass="bg-gradient-to-br from-teal-400 via-emerald-400 to-green-300"
+                tag="SMARTLINK"
+              />
+              <ServiceCard
+                title="Digital Business Cards"
+                slogan="Go Green, Stay Connected"
+                description="Eco-friendly NFC-enabled digital business cards that update in real-time, reducing environmental impact while maintaining professional connections."
+                iconName="Contact"
+                bgClass="bg-gradient-to-br from-blue-500 via-indigo-400 to-cyan-300"
+                tag="SMARTWAVE"
               />
               <ServiceCard
                 title="Industrial Support"
-                description="Comprehensive maintenance, logistics, and operational support for industrial facilities."
-                icon="Wrench"
-              />
-              <ServiceCard
-                title="Energy Projects"
-                description="End-to-end project management for energy infrastructure development."
-                icon="Zap"
-              />
-              <ServiceCard
-                title="Substation Construction"
-                description="Design, engineering, and construction of electrical substations and power systems."
-                icon="Power"
+                slogan="Maintain, Optimize, Excel"
+                description="Comprehensive maintenance, logistics, and operational support services backed by digital solutions for enhanced industrial performance."
+                iconName="Wrench"
+                bgClass="bg-gradient-to-br from-teal-500 via-emerald-400 to-green-400"
+                tag="SMARTFLOW"
               />
             </div>
             <div className="flex justify-center mt-8">
@@ -124,9 +143,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section className="w-full py-12 md:py-24 bg-slate-50">
-         
+        {/* Founder credentials Section */}
+        <section className="w-full py-3 md:py-6 bg-slate-100">
+          <RollingCredentials />
         </section>
 
         {/* CTA Section */}

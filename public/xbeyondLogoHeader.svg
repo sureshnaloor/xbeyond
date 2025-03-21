@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 250">
+  <defs>
+    <!-- Digital wave pattern -->
+    <pattern id="digitalPattern" patternUnits="userSpaceOnUse" width="30" height="30" patternTransform="rotate(45)">
+      <rect width="15" height="15" fill="#2980b9" fill-opacity="0.3" />
+    </pattern>
+    
+    <!-- Sun gradient -->
+    <radialGradient id="sunGradient" cx="75%" cy="30%" r="30%" fx="75%" fy="30%">
+      <stop offset="0%" stop-color="#ff9d00" />
+      <stop offset="100%" stop-color="#ff5e00" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Sun -->
+  <circle cx="380" cy="100" r="60" fill="url(#sunGradient)" />
+  
+  <!-- Horizon line with waves -->
+  <path d="M0,150 
+           C50,140 100,160 150,150 
+           S250,130 300,140 
+           S400,160 500,150 
+           L500,250 L0,250 Z" 
+        fill="#0a4da3" />
+  
+  <!-- Digital waves -->
+  <path d="M0,180 
+           C60,165 120,195 180,180 
+           S300,160 360,175 
+           S480,195 500,180 
+           L500,250 L0,250 Z" 
+        fill="#0e6cbf" opacity="0.7" />
+  
+  <path d="M0,210 
+           C70,190 140,230 210,210 
+           S350,180 420,205 
+           S480,230 500,210 
+           L500,250 L0,250 Z" 
+        fill="#1e88e5" opacity="0.6" />
+  
+  <!-- Digital elements -->
+  <!-- Circuit paths -->
+  <path d="M50,180 H150 V210 H250 V230 H300" stroke="#ff7b00" stroke-width="3" fill="none" />
+  <path d="M200,180 H300 V210 H400" stroke="#ff7b00" stroke-width="3" fill="none" />
+  
+  <!-- Nodes -->
+  <circle cx="50" cy="180" r="5" fill="#ff7b00" />
+  <circle cx="150" cy="180" r="5" fill="#ff7b00" />
+  <circle cx="150" cy="210" r="5" fill="#ff7b00" />
+  <circle cx="250" cy="210" r="5" fill="#ff7b00" />
+  <circle cx="250" cy="230" r="5" fill="#ff7b00" />
+  <circle cx="300" cy="230" r="5" fill="#ff7b00" />
+  <circle cx="200" cy="180" r="5" fill="#ff7b00" />
+  <circle cx="300" cy="180" r="5" fill="#ff7b00" />
+  <circle cx="300" cy="210" r="5" fill="#ff7b00" />
+  <circle cx="400" cy="210" r="5" fill="#ff7b00" />
+  
+  <!-- Digital floating elements -->
+  <rect x="80" y="160" width="20" height="20" rx="2" fill="#ff9d00" opacity="0.8" />
+  <rect x="300" y="140" width="15" height="15" rx="2" fill="#ff9d00" opacity="0.8" />
+  <rect x="350" y="160" width="25" height="25" rx="2" fill="#ff9d00" opacity="0.8" />
+  
+  <!-- Small happy digital world icons -->
+  <!-- Simplified house -->
+  <path d="M110,200 L125,185 L140,200 L140,215 L110,215 Z" fill="#ff7b00" />
+  <!-- Tree -->
+  <rect x="170" y="207" width="4" height="8" fill="#ff7b00" />
+  <circle cx="172" cy="202" r="5" fill="#ff9d00" />
+  <!-- People -->
+  <circle cx="220" cy="210" r="3" fill="#ff9d00" />
+  <path d="M220,213 V218" stroke="#ff9d00" stroke-width="2" />
+  <circle cx="230" cy="210" r="3" fill="#ff9d00" />
+  <path d="M230,213 V218" stroke="#ff9d00" stroke-width="2" />
+</svg>
