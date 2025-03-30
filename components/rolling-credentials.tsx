@@ -28,7 +28,7 @@ export default function RollingCredentials() {
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Meet Our Founder</h2>
         <h3 className="text-2xl font-semibold text-primary">Suresh Naloor Menon</h3>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Electrical Engineer from the prestigious 200-year-old College of Engineering, India. Professional career across India's National Upstream Oil Giant ONGC and then in Multinationals across Middle East.
+          Electrical Engineer graduated from College of Engineering, Guindy, India. Professional career across India's ONGC and then in Multinationals across Middle East.
           Now embarking on an entrepreneurial journey to share decades of wisdom with emerging businesses.
         </p>
       </div>
@@ -41,7 +41,7 @@ export default function RollingCredentials() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -50, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-xl text-center font-medium text-gray-700"
+            className="text-[16px] text-center font-medium text-gray-800"
           >
             {credentials[currentIndex]}
           </motion.div>
