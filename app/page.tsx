@@ -145,7 +145,7 @@ export default function Home() {
           </div>
         </section>
           {/* Add this section before the final CTA or footer */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-9 bg-muted/60">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
@@ -173,27 +173,150 @@ export default function Home() {
                     Discover More <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
+                {/* Add CEO illustration and slogan */}
+                <div className="mt-8 flex items-center gap-6">
+                  <svg
+                    width="240"
+                    height="240"
+                    viewBox="0 0 400 400"
+                    className="transform hover:scale-105 transition-transform duration-300"
+                  >
+                    <circle cx="200" cy="150" r="40" fill="#4A5568" />
+                    <path
+                      d="M160 200 L240 200 L220 300 L180 300 Z"
+                      fill="#2D3748"
+                    />
+                    <path
+                      d="M160 220 Q130 230 150 280 Q160 300 180 290"
+                      stroke="#4A5568"
+                      strokeWidth="8"
+                      fill="none"
+                    />
+                    <path
+                      d="M240 220 Q270 230 250 280 Q240 300 220 290"
+                      stroke="#4A5568"
+                      strokeWidth="8"
+                      fill="none"
+                    />
+                    <g className="animate-bounce">
+                      <circle cx="180" cy="160" r="15" fill="#93C5FD" />
+                      <rect x="200" y="180" width="25" height="25" fill="#6EE7B7" transform="rotate(45 212.5 192.5)" />
+                      <polygon
+                        points="140,240 160,220 140,200"
+                        fill="#FCD34D"
+                      />
+                    </g>
+                    <path
+                      d="M185 150 Q200 165 215 150"
+                      stroke="#E5E7EB"
+                      strokeWidth="3"
+                      fill="none"
+                    />
+                    <circle cx="190" cy="140" r="4" fill="#E5E7EB" />
+                    <circle cx="210" cy="140" r="4" fill="#E5E7EB" />
+                    <path
+                      d="M160 120 Q200 80 240 120"
+                      stroke="#4A5568"
+                      strokeWidth="8"
+                      fill="none"
+                    />
+                  </svg>
+                  <div className="space-y-2 max-w-[180px]">
+                    <p className="text-[14px] font-semibold text-primary italic leading-snug">
+                      "Let us do the juggling of your purchases,
+                    </p>
+                    <p className="text-[14px] font-bold text-secondary/80 italic leading-snug">
+                      let your CEO focus on core business"
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="relative">
               <div className="aspect-square rounded-lg bg-gradient-to-br from-primary/10 to-primary/30 p-8">
                 <div className="grid grid-cols-2 gap-4">
-                  <Card className="p-4">
-                    <h3 className="font-bold">Cost Savings</h3>
-                    <p className="text-sm text-muted-foreground">Optimize procurement costs</p>
-                  </Card>
-                  <Card className="p-4">
-                    <h3 className="font-bold">Efficiency</h3>
-                    <p className="text-sm text-muted-foreground">Streamlined operations</p>
-                  </Card>
-                  <Card className="p-4">
-                    <h3 className="font-bold">Expertise</h3>
-                    <p className="text-sm text-muted-foreground">Industry knowledge</p>
-                  </Card>
-                  <Card className="p-4">
-                    <h3 className="font-bold">Innovation</h3>
-                    <p className="text-sm text-muted-foreground">Digital solutions</p>
-                  </Card>
+                  <div className="flip-card h-24">
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front bg-rose-100 rounded-lg flex items-center justify-center p-4">
+                        <h3 className="font-bold text-center">Cost Savings</h3>
+                      </div>
+                      <div className="flip-card-back bg-rose-200 rounded-lg p-4">
+                        <p className="text-sm">Optimize procurement costs</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flip-card h-24">
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front bg-sky-100 rounded-lg flex items-center justify-center p-4">
+                        <h3 className="font-bold text-center">Efficiency</h3>
+                      </div>
+                      <div className="flip-card-back bg-sky-200 rounded-lg p-4">
+                        <p className="text-sm">Streamlined operations</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flip-card h-24">
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front bg-amber-100 rounded-lg flex items-center justify-center p-4">
+                        <h3 className="font-bold text-center">Expertise</h3>
+                      </div>
+                      <div className="flip-card-back bg-amber-200 rounded-lg p-4">
+                        <p className="text-sm">Industry knowledge</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flip-card h-24">
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front bg-emerald-100 rounded-lg flex items-center justify-center p-4">
+                        <h3 className="font-bold text-center">Innovation</h3>
+                      </div>
+                      <div className="flip-card-back bg-emerald-200 rounded-lg p-4">
+                        <p className="text-sm">Digital solutions</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-8 grid grid-cols-2 gap-4">
+                  <div className="flip-card h-24">
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front bg-violet-100 rounded-lg flex items-center justify-center p-4">
+                        <h3 className="font-bold text-center">Local Content</h3>
+                      </div>
+                      <div className="flip-card-back bg-violet-200 rounded-lg p-4">
+                        <p className="text-sm">Boost Saudization and local content score</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flip-card h-24">
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front bg-cyan-100 rounded-lg flex items-center justify-center p-4">
+                        <h3 className="font-bold text-center">Risk Mitigation</h3>
+                      </div>
+                      <div className="flip-card-back bg-cyan-200 rounded-lg p-4">
+                        <p className="text-sm">Comprehensive risk management</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flip-card h-24">
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front bg-teal-100 rounded-lg flex items-center justify-center p-4">
+                        <h3 className="font-bold text-center">Digital First</h3>
+                      </div>
+                      <div className="flip-card-back bg-teal-200 rounded-lg p-4">
+                        <p className="text-sm">AI-powered solutions</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flip-card h-24">
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front bg-fuchsia-100 rounded-lg flex items-center justify-center p-4">
+                        <h3 className="font-bold text-center">Flexible Models</h3>
+                      </div>
+                      <div className="flip-card-back bg-fuchsia-200 rounded-lg p-4">
+                        <p className="text-sm">Customizable engagement models</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
