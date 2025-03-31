@@ -37,7 +37,7 @@ export default function MainNav({ className }: { className?: string }) {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-slate-800 to-slate-900 p-6 no-underline outline-none focus:shadow-md"
                     href="/about"
                   >
-                    <div className="mt-4 mb-2 text-lg font-medium text-white">About EnergyTech</div>
+                    <div className="mt-4 mb-2 text-lg font-medium text-white">About xBeyond</div>
                     <p className="text-sm leading-tight text-white/90">
                       Learn about our company history, mission, and values.
                     </p>
@@ -63,23 +63,23 @@ export default function MainNav({ className }: { className?: string }) {
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              <ListItem href="/services/oil-gas" title="Oil & Gas">
-                Exploration, production, and distribution services
+              <ListItem href="/services/smarttag" title="Asset Management">
+               Asset Management services
               </ListItem>
-              <ListItem href="/services/petrochemicals" title="Petrochemicals">
-                Manufacturing and processing solutions
+              <ListItem href="/services/smartproject" title="Project Management">
+                Project Management solutions
               </ListItem>
-              <ListItem href="/services/manpower" title="Manpower Services">
-                Specialized recruitment and staffing
+              <ListItem href="/services/smartclass" title="Materials cataloguing and classificatin Services">
+                Materials and services classification and cataloguing solutions
               </ListItem>
-              <ListItem href="/services/industrial" title="Industrial Support">
-                Maintenance, logistics, and operations
+              <ListItem href="/services/smartlink" title="Supply Chain solutions">
+                Complete supply chain, procurement, warehousing, logistics, and operations solutions.
               </ListItem>
-              <ListItem href="/services/energy-projects" title="Energy Projects">
-                End-to-end project management
+              <ListItem href="/services/smartwave" title="E-marketplace">
+                E-marketplace connecting material and service providers to EPC companies.
               </ListItem>
-              <ListItem href="/services/substations" title="Substation Construction">
-                Design and construction of power systems
+              <ListItem href="/services/smartflow" title="Vendor Management solutions">
+                Vendor prequalification, onboarding, evaluation and management solutions.
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -111,9 +111,9 @@ export default function MainNav({ className }: { className?: string }) {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/news" legacyBehavior passHref>
+          <Link href="/whyxbeyond" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()} active={pathname === "/news"}>
-              News
+              Why xBeyond
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

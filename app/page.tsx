@@ -1,10 +1,12 @@
-import Link from "next/link"
-import { ChevronRight, ArrowRight, Database, Building2, BarChart2, Network, Contact, Wrench } from "lucide-react"
+
+import { ChevronRight, Database, Building2, BarChart2, Network, Contact, Wrench } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import MainNav from "@/components/main-nav"
 import ChatButton from "@/components/chat-button"
 import ServiceCard from "@/components/service-card"
+import { CheckCircle, ArrowRight } from "lucide-react"
+import Link from "next/link"
 import StatsCounter from "@/components/stats-counter"
 import Logo from "@/components/logo"
 // Remove the CldImage import as it's now in the Logo component
@@ -174,6 +176,63 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* Add this section before the final CTA or footer */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4">
+              <h2 className="text-4xl font-bold">Why Choose xBeyond?</h2>
+              <p className="text-xl text-muted-foreground">
+                Transform your supply chain management with our proven expertise in procurement outsourcing and digital solutions.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Reduce operational costs by up to 30%</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Access deep Saudi market expertise</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>AI-driven procurement insights</span>
+                </li>
+              </ul>
+              <div className="pt-4">
+                <Link href="/whyxbeyond">
+                  <Button size="lg">
+                    Discover More <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-square rounded-lg bg-gradient-to-br from-primary/10 to-primary/30 p-8">
+                <div className="grid grid-cols-2 gap-4">
+                  <Card className="p-4">
+                    <h3 className="font-bold">Cost Savings</h3>
+                    <p className="text-sm text-muted-foreground">Optimize procurement costs</p>
+                  </Card>
+                  <Card className="p-4">
+                    <h3 className="font-bold">Efficiency</h3>
+                    <p className="text-sm text-muted-foreground">Streamlined operations</p>
+                  </Card>
+                  <Card className="p-4">
+                    <h3 className="font-bold">Expertise</h3>
+                    <p className="text-sm text-muted-foreground">Industry knowledge</p>
+                  </Card>
+                  <Card className="p-4">
+                    <h3 className="font-bold">Innovation</h3>
+                    <p className="text-sm text-muted-foreground">Digital solutions</p>
+                  </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <footer className="border-t bg-slate-900 text-white">
         <div className="container px-4 py-8 md:px-6 md:py-12">
