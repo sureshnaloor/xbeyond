@@ -16,7 +16,7 @@ import RollingCredentials from "@/components/rolling-credentials"
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      {/* <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center">
           <Logo />
           <MainNav className="mx-6" />
@@ -27,7 +27,7 @@ export default function Home() {
             <ChatButton />
           </div>
         </div>
-      </header>
+      </header> */}
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -356,7 +356,7 @@ export default function Home() {
         </section>
       </main>
   
-      <footer className="border-t bg-slate-900 text-white">
+      {/* <footer className="border-t bg-slate-900 text-white">
         <div className="container px-4 py-8 md:px-6 md:py-12">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
             <div className="col-span-2">
@@ -495,7 +495,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }

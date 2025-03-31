@@ -1,105 +1,125 @@
+import { ChevronRight, CheckCircle, Shield, AlertTriangle, Lightbulb } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ArrowRight, CheckCircle, Shield, AlertTriangle, Lightbulb } from "lucide-react"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
+import Link from "next/link"
 
 export default function WhyXBeyondPage() {
   return (
     <>
-      <Header />
-      <main className="min-h-screen">
-        <div className="container mx-auto py-8 space-y-12">
-          {/* Hero Section */}
-          <section className="text-center space-y-6">
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Transform Your Supply Chain Management
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Unlock the potential of outsourced procurement and supply chain management while maintaining control and efficiency
-            </p>
-            <Button size="lg" className="mt-6">
-              Schedule a Consultation <ArrowRight className="ml-2" />
-            </Button>
-          </section>
-
-          {/* Benefits Section */}
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit) => (
-              <Card key={benefit.title} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    {benefit.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>{benefit.description}</CardContent>
-              </Card>
-            ))}
-          </section>
-
-          {/* Risk Management Section */}
-          <section className="bg-muted/30 p-8 rounded-lg">
-            <h2 className="text-3xl font-bold mb-8 text-center">Risk Management Approach</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {risks.map((risk) => (
-                <div key={risk.concern} className="flex gap-4">
-                  <div className="flex-shrink-0">
-                    <AlertTriangle className="h-6 w-6 text-yellow-500" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">{risk.concern}</h3>
-                    <p className="text-muted-foreground">{risk.solution}</p>
-                  </div>
-                </div>
-              ))}
+      {/* Hero Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                Why Choose xBeyond?
+              </h1>
+              <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
+                Transform your supply chain management with proven expertise in procurement outsourcing
+              </p>
             </div>
-          </section>
-
-          {/* Strategy Tabs */}
-          <section>
-            <h2 className="text-3xl font-bold mb-8 text-center">Strategic Approaches</h2>
-            <Tabs defaultValue="direct" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5">
-                {strategies.map((strategy) => (
-                  <TabsTrigger key={strategy.id} value={strategy.id}>
-                    {strategy.title}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              {strategies.map((strategy) => (
-                <TabsContent key={strategy.id} value={strategy.id} className="mt-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>{strategy.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p>{strategy.description}</p>
-                      <div className="mt-4">
-                        <Button variant="outline">
-                          Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </TabsContent>
-              ))}
-            </Tabs>
-          </section>
-
-          {/* CTA Section */}
-          <section className="text-center bg-gradient-to-r from-primary/10 to-primary/5 p-12 rounded-lg">
-            <h2 className="text-3xl font-bold mb-4">Ready to Optimize Your Supply Chain?</h2>
-            <p className="text-lg mb-6">Let's discuss how xBeyond can transform your procurement operations</p>
-            <div className="flex gap-4 justify-center">
-              <Button size="lg">Request Demo</Button>
-              <Button size="lg" variant="outline">Contact Sales</Button>
-            </div>
-          </section>
+          </div>
         </div>
-      </main>
-      <Footer />
+      </section>
+
+      {/* Benefits Section */}
+      <section className="w-full py-12 md:py-24 bg-white">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg transition-shadow"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <CheckCircle className="h-6 w-6 text-primary" />
+                  <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                </div>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Risk Management Section */}
+      <section className="w-full py-12 md:py-24 bg-slate-50">
+        <div className="container px-4 md:px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">Risk Management Approach</h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {risks.map((risk, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg bg-white p-6 hover:shadow-lg transition-shadow"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <Shield className="h-6 w-6 text-primary" />
+                  <h3 className="text-xl font-semibold">{risk.concern}</h3>
+                </div>
+                <p className="text-gray-600">{risk.solution}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Strategy Section */}
+      <section className="w-full py-12 md:py-24 bg-white">
+        <div className="container px-4 md:px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">Strategic Approaches</h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {strategies.map((strategy, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg transition-shadow"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <Lightbulb className="h-6 w-6 text-primary" />
+                  <h3 className="text-xl font-semibold">{strategy.title}</h3>
+                </div>
+                <p className="text-gray-600 mb-4">{strategy.description}</p>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/services/${strategy.id}`}>
+                    Learn More <ChevronRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="w-full py-12 md:py-24 bg-primary text-primary-foreground">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                Ready to Transform Your Supply Chain?
+              </h2>
+              <p className="mx-auto max-w-[600px] text-primary-foreground/90 md:text-xl">
+                Let's discuss how xBeyond can optimize your procurement operations
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="/contact">
+                  Contact Us <ChevronRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                asChild
+              >
+                <Link href="/demo">Request Demo</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

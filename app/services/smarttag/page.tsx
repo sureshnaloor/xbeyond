@@ -1,116 +1,127 @@
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, MapPin, QrCode, Smartphone, Wrench, Bell, Users, Shield } from "lucide-react"
+import { ChevronRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
-export default function AssetManagementPage() {
+const features = [
+  {
+    title: "Real-time Tracking",
+    description: "Advanced GPS and IoT-based tracking system for real-time location monitoring and status updates of all your movable assets.",
+    icon: "📍"
+  },
+  {
+    title: "Maintenance Scheduling",
+    description: "AI-powered predictive maintenance system that forecasts equipment needs and automatically schedules preventive maintenance.",
+    icon: "🔧"
+  },
+  {
+    title: "Asset Performance Analytics",
+    description: "Comprehensive analytics dashboard providing insights into asset utilization, efficiency metrics, and ROI calculations.",
+    icon: "📊"
+  },
+  {
+    title: "Digital Asset Registry",
+    description: "Centralized digital registry for all assets with detailed specifications, maintenance history, and documentation management.",
+    icon: "📱"
+  },
+  {
+    title: "Compliance Management",
+    description: "Automated compliance tracking system ensuring all assets meet regulatory requirements and industry standards.",
+    icon: "✅"
+  },
+  {
+    title: "Cost Optimization",
+    description: "Smart cost tracking and optimization tools to monitor operational expenses and identify cost-saving opportunities.",
+    icon: "💰"
+  },
+  {
+    title: "Mobile Access",
+    description: "Secure mobile application for on-the-go access to asset information, maintenance requests, and status updates.",
+    icon: "📱"
+  },
+  {
+    title: "Integration Capabilities",
+    description: "Seamless integration with existing ERP systems and other business applications for streamlined operations.",
+    icon: "🔄"
+  },
+  {
+    title: "Automated Reporting",
+    description: "Customizable reporting system with automated generation and distribution of asset performance reports.",
+    icon: "📈"
+  },
+  {
+    title: "Smart Alerts",
+    description: "Intelligent alert system for maintenance needs, compliance deadlines, and critical asset status changes.",
+    icon: "🔔"
+  }
+]
+
+export default function SmartTagPage() {
   return (
-    <div className="container mx-auto py-8">
-      <div className="space-y-6">
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Smart Asset Management</h1>
-          <p className="text-xl text-muted-foreground">
-            Comprehensive asset tracking and management solution for modern enterprises
-          </p>
-        </div>
-
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <FeatureCard
-            icon={<QrCode className="h-8 w-8 text-primary" />}
-            title="Smart Tagging"
-            description="Track assets using NFC tags and QR codes for seamless identification and monitoring"
-          />
-          <FeatureCard
-            icon={<MapPin className="h-8 w-8 text-primary" />}
-            title="Geolocation Tracking"
-            description="Real-time asset location tracking with geofencing capabilities for enhanced security"
-          />
-          <FeatureCard
-            icon={<Users className="h-8 w-8 text-primary" />}
-            title="Custodian Management"
-            description="Track and manage asset custodians with automated handover processes"
-          />
-          <FeatureCard
-            icon={<CheckCircle className="h-8 w-8 text-primary" />}
-            title="Calibration Management"
-            description="Monitor and schedule calibration activities for precision equipment"
-          />
-          <FeatureCard
-            icon={<Wrench className="h-8 w-8 text-primary" />}
-            title="Preventive Maintenance"
-            description="Proactive maintenance scheduling and alerts to prevent equipment failure"
-          />
-          <FeatureCard
-            icon={<Shield className="h-8 w-8 text-primary" />}
-            title="Compliance & Reporting"
-            description="Ensure regulatory compliance with detailed asset history and reports"
-          />
-        </div>
-
-        {/* Key Benefits Section */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Key Benefits</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Operational Excellence</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Reduced asset downtime</li>
-                  <li>Improved maintenance scheduling</li>
-                  <li>Enhanced asset utilization</li>
-                  <li>Real-time asset visibility</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Cost Optimization</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Lower maintenance costs</li>
-                  <li>Reduced asset loss</li>
-                  <li>Optimized inventory levels</li>
-                  <li>Better resource allocation</li>
-                </ul>
-              </CardContent>
-            </Card>
+    <>
+      {/* Hero Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                Asset Management Solutions
+              </h1>
+              <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
+                Intelligent asset tracking and maintenance system powered by IoT and AI technology.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Asset Management?</h3>
-          <p className="mb-6">Contact us for a demonstration of our smart asset management solution</p>
-          <div className="flex gap-4 justify-center">
-            <Badge variant="outline" className="text-lg py-2 px-4">
-              Request Demo
-            </Badge>
-            <Badge variant="outline" className="text-lg py-2 px-4">
-              Contact Sales
-            </Badge>
+      {/* Features Grid */}
+      <section className="w-full py-12 md:py-24 bg-white">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg transition-shadow"
+              >
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </div>
-  )
-}
+      </section>
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
-    <Card>
-      <CardHeader>
-        <div className="flex items-center gap-4">
-          {icon}
-          <CardTitle>{title}</CardTitle>
+      {/* CTA Section */}
+      <section className="w-full py-12 md:py-24 bg-primary text-primary-foreground">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                Ready to Optimize Your Asset Management?
+              </h2>
+              <p className="mx-auto max-w-[600px] text-primary-foreground/90 md:text-xl">
+                Let's discuss how our SMARTTAG solution can transform your asset management operations.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="/contact">
+                  Contact Us <ChevronRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                asChild
+              >
+                <Link href="/services">View All Services</Link>
+              </Button>
+            </div>
+          </div>
         </div>
-      </CardHeader>
-      <CardContent>
-        <CardDescription>{description}</CardDescription>
-      </CardContent>
-    </Card>
+      </section>
+    </>
   )
 }
