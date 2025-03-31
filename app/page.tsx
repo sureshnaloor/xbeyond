@@ -144,45 +144,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Founder credentials Section */}
-        <section className="w-full py-3 md:py-6 bg-slate-100">
-          <RollingCredentials />
-        </section>
-
-        {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 bg-primary text-primary-foreground">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Ready to Digitize Your Construction Operations?
-                </h2>
-                <p className="max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Partner with us to leverage AI and automation for enhanced efficiency, accuracy, and project success in your construction business.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-end">
-                <Button size="lg" variant="secondary" asChild>
-                  <Link href="/contact">
-                    Contact Our Team <ChevronRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" className="border-primary-foreground" asChild>
-                  <Link href="/about">Learn More About Us</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Add this section before the final CTA or footer */}
+          {/* Add this section before the final CTA or footer */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <h2 className="text-4xl font-bold">Why Choose xBeyond?</h2>
+              <h2 className="text-2xl font-bold">Why Choose xBeyond?</h2>
               <p className="text-xl text-muted-foreground">
                 Transform your supply chain management with our proven expertise in procurement outsourcing and digital solutions.
               </p>
@@ -234,6 +201,38 @@ export default function Home() {
         </div>
       </section>
 
+        {/* Founder credentials Section */}
+        <section className="w-full py-3 md:py-6 bg-slate-100">
+          <RollingCredentials />
+        </section>
+
+        {/* CTA Section */}
+        <section className="w-full py-12 md:py-24 bg-primary text-primary-foreground">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <div className="space-y-4">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  Ready to Digitize Your Construction Operations?
+                </h2>
+                <p className="max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Partner with us to leverage AI and automation for enhanced efficiency, accuracy, and project success in your construction business.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-end">
+                <Button size="lg" variant="secondary" asChild>
+                  <Link href="/contact">
+                    Contact Our Team <ChevronRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-primary-foreground" asChild>
+                  <Link href="/about">Learn More About Us</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+  
       <footer className="border-t bg-slate-900 text-white">
         <div className="container px-4 py-8 md:px-6 md:py-12">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
