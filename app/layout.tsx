@@ -30,8 +30,11 @@ export default function RootLayout({
           <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-16 items-center">
               <Logo />
-              <MainNav className="mx-6" />
-              <div className="ml-auto flex items-center space-x-4">
+              <MainNav className="mx-6 hidden md:flex" />
+              <div className="md:hidden ml-auto">
+                <MobileNav />
+              </div>
+              <div className="hidden md:flex ml-auto items-center space-x-4">
                 <Button asChild variant="outline">
                   <Link href="/contact">Contact Us</Link>
                 </Button>

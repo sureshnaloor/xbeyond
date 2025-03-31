@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Logo from "@/components/logo"
 
 export default function MobileNav() {
   return (
@@ -19,7 +20,10 @@ export default function MobileNav() {
           <div className="px-4 py-6 border-b">
             <Link href="/" className="flex items-center" passHref>
               <SheetClose asChild>
-                <div className="font-bold text-xl">EnergyTech</div>
+                <div className="flex items-center">
+                  <Logo />
+                  <span className="ml-2 font-bold text-xl">xBeyond</span>
+                </div>
               </SheetClose>
             </Link>
             <SheetClose className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
@@ -35,7 +39,7 @@ export default function MobileNav() {
                   <div className="flex flex-col space-y-2 pl-4">
                     <SheetClose asChild>
                       <Link href="/about" className="py-2 px-4 hover:bg-accent rounded-md">
-                        About Us
+                        About xBeyond
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
@@ -66,33 +70,33 @@ export default function MobileNav() {
                 <AccordionContent>
                   <div className="flex flex-col space-y-2 pl-4">
                     <SheetClose asChild>
-                      <Link href="/services/oil-gas" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Oil & Gas
+                      <Link href="/services/smarttag" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Asset Management
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link href="/services/petrochemicals" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Petrochemicals
+                      <Link href="/services/smartproject" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Project Management
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link href="/services/manpower" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Manpower Services
+                      <Link href="/services/smartclass" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Materials Cataloguing
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link href="/services/industrial" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Industrial Support
+                      <Link href="/services/smartlink" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Supply Chain Solutions
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link href="/services/energy-projects" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Energy Projects
+                      <Link href="/services/smartwave" className="py-2 px-4 hover:bg-accent rounded-md">
+                        E-marketplace
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link href="/services/substations" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Substation Construction
+                      <Link href="/services/smartflow" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Vendor Management
                       </Link>
                     </SheetClose>
                   </div>
@@ -135,22 +139,17 @@ export default function MobileNav() {
             </div>
             <div className="px-4 py-2">
               <SheetClose asChild>
-                <Link href="/news" className="flex w-full py-2 hover:bg-accent rounded-md">
-                  News
-                </Link>
-              </SheetClose>
-            </div>
-            <div className="px-4 py-2">
-              <SheetClose asChild>
-                <Link href="/contact" className="flex w-full py-2 hover:bg-accent rounded-md">
-                  Contact
+                <Link href="/whyxbeyond" className="flex w-full py-2 hover:bg-accent rounded-md">
+                  Why xBeyond
                 </Link>
               </SheetClose>
             </div>
           </div>
           <div className="border-t p-4">
             <SheetClose asChild>
-              <Button className="w-full">Contact Us</Button>
+              <Button asChild className="w-full">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
             </SheetClose>
           </div>
         </div>
