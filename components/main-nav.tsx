@@ -16,23 +16,25 @@ import { usePathname } from "next/navigation"
 import Logo from "@/components/logo"
 
 export default function MainNav({ className }: { className?: string }) {
+  const pathname = usePathname()
+  
   return (
     <NavigationMenu className={className}>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>About</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px]">
-              <li className="row-span-3">
+            <ul className="grid grid-cols-5 gap-3 p-6 md:w-[600px]">
+              <li className="col-span-2">
                 <NavigationMenuLink asChild>
-                  <Link href="/about" className="flex flex-col justify-between rounded-md no-underline outline-none focus:shadow-md">
+                  <Link href="/about" className="block select-none rounded-md p-6 no-underline outline-none bg-slate-900 text-white hover:bg-slate-800">
                     <div className="flex items-center mb-2">
-                      <div className="w-16 h-16 mr-4">
+                      <div className="w-12 h-12 mr-4">
                         <Logo />
                       </div>
                       <div>
-                        <h2 className="text-xl font-medium mb-1">About xBeyond</h2>
-                        <p className="text-sm leading-tight text-muted-foreground">
+                        <h2 className="text-xl font-medium mb-1 text-white">About xBeyond</h2>
+                        <p className="text-sm leading-tight text-slate-300">
                           Learn about our mission and vision in transforming construction procurement
                         </p>
                       </div>
@@ -40,18 +42,20 @@ export default function MainNav({ className }: { className?: string }) {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/about/history" title="Our History">
-                The journey that made us industry leaders
-              </ListItem>
-              <ListItem href="/about/leadership" title="Leadership Team">
-                Meet the experts guiding our vision
-              </ListItem>
-              <ListItem href="/about/values" title="Core Values">
-                The principles that drive our operations
-              </ListItem>
-              <ListItem href="/about/certifications" title="Certifications">
-                Industry standards we adhere to
-              </ListItem>
+              <div className="col-span-3 space-y-3">
+                <ListItem href="/about/history" title="Our History">
+                  The journey that made us industry leaders
+                </ListItem>
+                <ListItem href="/about/leadership" title="Leadership Team">
+                  Meet the experts guiding our vision
+                </ListItem>
+                <ListItem href="/about/values" title="Core Values">
+                  The principles that drive our operations
+                </ListItem>
+                <ListItem href="/about/certifications" title="Certifications">
+                  Industry standards we adhere to
+                </ListItem>
+              </div>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
