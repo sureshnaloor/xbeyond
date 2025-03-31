@@ -13,35 +13,31 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { usePathname } from "next/navigation"
+import Logo from "@/components/logo"
 
 export default function MainNav({ className }: { className?: string }) {
-  const pathname = usePathname()
-
   return (
-    <NavigationMenu className={cn("hidden md:flex", className)}>
+    <NavigationMenu className={className}>
       <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()} active={pathname === "/"}>
-              Home
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>About</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-2">
+            <ul className="grid gap-3 p-6 md:w-[400px]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-slate-800 to-slate-900 p-6 no-underline outline-none focus:shadow-md"
-                    href="/about"
-                  >
-                    <div className="mt-4 mb-2 text-lg font-medium text-white">About xBeyond</div>
-                    <p className="text-sm leading-tight text-white/90">
-                      Learn about our company history, mission, and values.
-                    </p>
-                  </a>
+                  <Link href="/about" className="flex flex-col justify-between rounded-md no-underline outline-none focus:shadow-md">
+                    <div className="flex items-center mb-2">
+                      <div className="w-16 h-16 mr-4">
+                        <Logo />
+                      </div>
+                      <div>
+                        <h2 className="text-xl font-medium mb-1">About xBeyond</h2>
+                        <p className="text-sm leading-tight text-muted-foreground">
+                          Learn about our mission and vision in transforming construction procurement
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
                 </NavigationMenuLink>
               </li>
               <ListItem href="/about/history" title="Our History">
