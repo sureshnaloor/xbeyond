@@ -69,7 +69,7 @@ export default function MainNav({ className }: { className?: string }) {
               <ListItem href="/services/smartproject" title="Project Management">
                 Project Management solutions
               </ListItem>
-              <ListItem href="/services/smartclass" title="Materials cataloguing and classificatin Services">
+              <ListItem href="/services/smartclass" title="Materials cataloguing and classification Services">
                 Materials and services classification and cataloguing solutions
               </ListItem>
               <ListItem href="/services/smartlink" title="Supply Chain solutions">
