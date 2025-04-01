@@ -5,7 +5,14 @@ import { NextResponse } from 'next/server'
 // @ts-ignore
 import B2 from 'backblaze-b2'
 
-const prisma = new PrismaClient()
+// PrismaClient initialization for production
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined
+}
+
+const prisma = globalForPrisma.prisma ?? new PrismaClient()
+
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
 
 // Initialize Backblaze
 const b2 = new B2({
