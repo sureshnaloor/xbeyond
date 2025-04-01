@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Logo from "@/components/logo"
+import ChatButton from "@/components/chat-button"
 
 export default function MobileNav() {
   return (
@@ -145,12 +146,15 @@ export default function MobileNav() {
               </SheetClose>
             </div>
           </div>
-          <div className="border-t p-4">
+          <div className="border-t p-4 space-y-2">
             <SheetClose asChild>
               <Button asChild className="w-full">
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </SheetClose>
+            <div className="w-full">
+              <ChatButton variant="default" className="w-full justify-start" />
+            </div>
           </div>
         </div>
       </SheetContent>
