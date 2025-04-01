@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -12,9 +13,10 @@ export default function JobApplicationForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const form = e.currentTarget
     setIsSubmitting(true)
 
-    const formData = new FormData(e.currentTarget)
+    const formData = new FormData(form)
 
     try {
       const response = await fetch('/api/career/apply', {
@@ -24,17 +26,25 @@ export default function JobApplicationForm() {
 
       const data = await response.json()
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit application')
+      if (response.status === 200) {
+        toast.success(data.message, {
+          duration: 10000,
+          className: "bg-green-50",
+          onDismiss: () => {
+            form.reset()
+          }
+        })
+      } else {
+        toast.error(data.error || 'Failed to submit application', {
+          duration: 10000,
+        })
       }
-
-      // Reset form and show success message
-      e.currentTarget.reset()
-      alert(data.message)
     } catch (error) {
-      alert('Failed to submit application. Please try again.')
+      null
     } finally {
       setIsSubmitting(false)
+      form.reset()
+      window.scrollTo(0, 0) // Scroll to top on erro
     }
   }
 

@@ -9,6 +9,7 @@ import Link from "next/link"
 import Logo from "@/components/logo"
 import MainNav from "@/components/main-nav"
 import ChatButton from "@/components/chat-button"
+import { Toaster } from 'sonner'
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,6 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Toaster 
+          position="top-center" 
+          duration={10000}
+          closeButton
+        />
         <div className="flex min-h-screen flex-col">
           {/* Header */}
           <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

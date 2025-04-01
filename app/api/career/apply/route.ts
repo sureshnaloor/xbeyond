@@ -1,18 +1,29 @@
+// First install prisma client: npm install @prisma/client
+// Then generate prisma client: npx prisma generate
+import { PrismaClient } from '@prisma/client'
 import { NextResponse } from 'next/server'
-import { writeFile } from 'fs/promises'
-import path from 'path'
+// @ts-ignore
+import B2 from 'backblaze-b2'
+
+const prisma = new PrismaClient()
+
+// Initialize Backblaze
+const b2 = new B2({
+  applicationKeyId: process.env.B2_APPLICATION_KEY_ID!,
+  applicationKey: process.env.B2_APPLICATION_KEY!
+})
 
 export async function POST(request: Request) {
   try {
     const formData = await request.formData()
     
     // Extract form fields
-    const firstName = formData.get('firstName')
-    const lastName = formData.get('lastName')
-    const email = formData.get('email')
-    const phone = formData.get('phone')
-    const position = formData.get('position')
-    const coverLetter = formData.get('coverLetter')
+    const firstName = formData.get('firstName') as string
+    const lastName = formData.get('lastName') as string
+    const email = formData.get('email') as string
+    const phone = formData.get('phone') as string
+    const position = formData.get('position') as string
+    const coverLetter = formData.get('coverLetter') as string
     const resumeFile = formData.get('resume') as File
 
     if (!resumeFile) {
@@ -22,33 +33,47 @@ export async function POST(request: Request) {
       )
     }
 
+    // Upload file to Backblaze
+    await b2.authorize()
+
+    // Get upload URL
+    const { data: { uploadUrl, authorizationToken } } = await b2.getUploadUrl({
+      bucketId: process.env.B2_BUCKET_ID!
+    })
+
     // Create unique filename
     const timestamp = Date.now()
-    const filename = `${timestamp}-${resumeFile.name}`
-    const uploadsDir = path.join(process.cwd(), 'public/uploads')
-    const filePath = path.join(uploadsDir, filename)
+    const filename = `resumes/${timestamp}-${resumeFile.name}`
 
     // Convert file to buffer
     const bytes = await resumeFile.arrayBuffer()
     const buffer = Buffer.from(bytes)
 
-    // Save file
-    await writeFile(filePath, buffer)
+    // Upload to Backblaze
+    const { data: fileInfo } = await b2.uploadFile({
+      uploadUrl: uploadUrl,
+      uploadAuthToken: authorizationToken,
+      fileName: filename,
+      data: buffer,
+      contentLength: buffer.length,
+      contentType: resumeFile.type
+    })
 
-    // Save application data (you can replace this with your database logic)
-    const applicationData = {
-      firstName,
-      lastName,
-      email,
-      phone,
-      position,
-      coverLetter,
-      resumePath: `/uploads/${filename}`,
-      appliedAt: new Date().toISOString()
-    }
+    // Generate public URL
+    const fileUrl = `${process.env.B2_PUBLIC_URL}/file/${process.env.B2_BUCKET_NAME}/${filename}`
 
-    // Here you would typically save applicationData to your database
-    console.log('Application received:', applicationData)
+    // Save to MongoDB via Prisma
+    const application = await prisma.jobApplication.create({
+      data: {
+        firstName,
+        lastName,
+        email,
+        phone,
+        position,
+        coverLetter,
+        resumeUrl: fileUrl
+      }
+    })
 
     return NextResponse.json(
       { message: 'Your application is submitted successfully, you will hear back from us if found suitable' },
