@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
@@ -36,7 +37,22 @@ export default function ChatInterface() {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [sessionId] = useState(() => uuidv4())
   const scrollAreaRef = useRef<HTMLDivElement>(null)
+
+  // Save chat to MongoDB whenever messages change
+  useEffect(() => {
+    if (messages.length > 0) {
+      fetch('/api/chat/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sessionId,
+          messages,
+        }),
+      }).catch(error => console.error('Error saving chat:', error))
+    }
+  }, [messages, sessionId])
 
   useEffect(() => {
     if (scrollAreaRef.current) {
