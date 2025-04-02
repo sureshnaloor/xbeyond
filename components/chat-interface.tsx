@@ -97,10 +97,12 @@ setMessages((prev: Message[]) => [...prev, userMessage as Message])
               message.role === 'user' ? 'flex-row-reverse' : ''
             }`}
           >
-            <Avatar className={`h-8 w-8 font-bold pt-1 text-[12px] pl-1 ${
+            <Avatar className={`h-8 w-8 flex items-center justify-center ${
               message.role === 'user' ? 'bg-primary/60' : 'bg-secondary'
             }`}>
-              {message.role === 'user' ? 'You' : 'Bot'}
+              <span className="text-xs font-medium">
+                {message.role === 'user' ? 'You' : 'AI'}
+              </span>
             </Avatar>
             <div
               className={`rounded-lg p-4 max-w-[85%] ${
@@ -122,6 +124,7 @@ setMessages((prev: Message[]) => [...prev, userMessage as Message])
               <span className="w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0.2s]" />
               <span className="w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0.4s]" />
             </div>
+            <span className="text-sm">Thinking...</span>
           </div>
         )}
       </ScrollArea>
