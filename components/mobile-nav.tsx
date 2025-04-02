@@ -45,7 +45,7 @@ export default function MobileNav() {
                     </SheetClose>
                     <SheetClose asChild>
                       <Link href="/about/history" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Our History
+                        Our Story
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>

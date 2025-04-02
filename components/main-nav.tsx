@@ -43,7 +43,7 @@ export default function MainNav({ className }: { className?: string }) {
                 </NavigationMenuLink>
               </li>
               <div className="col-span-3 space-y-3">
-                <ListItem href="/about/journey" title="Our Journey">
+                <ListItem href="/about/history" title="Our Journey">
                   The story that shaped our vision and solutions
                 </ListItem>
                 <ListItem href="/about/leadership" title="Leadership Team">
