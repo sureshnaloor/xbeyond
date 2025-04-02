@@ -124,3 +124,55 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* Add these custom animations */
+.timeline-image {
+  transition: all 0.3s ease;
+}
+
+.timeline-image-founders:hover {
+  animation: gentleBounce 1.5s ease-in-out infinite;
+}
+
+.timeline-image-smarttag:hover {
+  animation: gentlePulse 1.5s ease-in-out infinite;
+}
+
+.timeline-image-expansion:hover {
+  animation: cardFlip 1.5s ease-in-out;
+}
+
+/* Add back spark and future animations */
+.timeline-image-spark:hover {
+  animation: spin 1.5s ease-in-out infinite;
+}
+
+.timeline-image-future:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Add these keyframes */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes gentleBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes cardFlip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}

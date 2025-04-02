@@ -103,28 +103,35 @@ export default function MobileNav() {
                   </div>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="projects">
-                <AccordionTrigger className="px-4">Projects</AccordionTrigger>
+              
+              {/* Replace Projects with Industries */}
+              <AccordionItem value="industries">
+                <AccordionTrigger className="px-4">Industries</AccordionTrigger>
                 <AccordionContent>
                   <div className="flex flex-col space-y-2 pl-4">
                     <SheetClose asChild>
-                      <Link href="/projects/oil-gas" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Oil & Gas Projects
+                      <Link href="/industries/power" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Power
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link href="/projects/petrochemical" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Petrochemical Projects
+                      <Link href="/industries/oil-gas" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Oil & Gas Upstream
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link href="/projects/power" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Power Projects
+                      <Link href="/industries/refineries" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Refineries & Mining
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link href="/projects/case-studies" className="py-2 px-4 hover:bg-accent rounded-md">
-                        Case Studies
+                      <Link href="/industries/petrochemicals" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Petrochemicals
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link href="/industries/infrastructure" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Infrastructure & Green Energy
                       </Link>
                     </SheetClose>
                   </div>

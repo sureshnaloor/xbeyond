@@ -1,0 +1,117 @@
+export default function PetrochemicalsIndustryPage() {
+  return (
+    <div className="container mx-auto py-12">
+      <h1 className="text-4xl font-bold mb-8 text-center">Petrochemical Industry Solutions</h1>
+      
+      <div className="space-y-16">
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Asset Management Excellence</h2>
+            <p className="text-gray-600 mb-4">
+              SmartTag revolutionizes petrochemical plant asset management with comprehensive monitoring of process equipment, reactors, and critical systems.
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>Process equipment monitoring</li>
+              <li>Reactor performance tracking</li>
+              <li>Corrosion monitoring systems</li>
+              <li>Safety system compliance</li>
+            </ul>
+          </div>
+          <div className="bg-gray-100 p-8 rounded-lg">
+            {/* Process equipment monitoring illustration */}
+          </div>
+        </section>
+
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
+            {/* Project management illustration */}
+          </div>
+          <div className="order-1 md:order-2">
+            <h2 className="text-2xl font-semibold mb-4">Project Management Transformation</h2>
+            <p className="text-gray-600 mb-4">
+              SmartProject optimizes plant turnarounds and expansion projects with integrated project management solutions.
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>Plant turnaround management</li>
+              <li>Expansion project tracking</li>
+              <li>Maintenance scheduling</li>
+              <li>Regulatory compliance monitoring</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Materials Intelligence</h2>
+            <p className="text-gray-600 mb-4">
+              SmartClass ensures precise classification of chemicals, catalysts, and equipment components.
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>Chemical inventory management</li>
+              <li>Catalyst lifecycle tracking</li>
+              <li>Equipment parts classification</li>
+              <li>Material safety documentation</li>
+            </ul>
+          </div>
+          <div className="bg-gray-100 p-8 rounded-lg">
+            {/* Materials management illustration */}
+          </div>
+        </section>
+
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
+            {/* Supply chain illustration */}
+          </div>
+          <div className="order-1 md:order-2">
+            <h2 className="text-2xl font-semibold mb-4">Supply Chain Excellence</h2>
+            <p className="text-gray-600 mb-4">
+              SmartLink optimizes the complex supply chain of petrochemical operations.
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>Chemical supply management</li>
+              <li>Catalyst procurement</li>
+              <li>Equipment spare parts logistics</li>
+              <li>Just-in-time inventory</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Digital Marketplace</h2>
+            <p className="text-gray-600 mb-4">
+              SmartWave connects petrochemical facilities with specialized suppliers and service providers.
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>Chemical supplier network</li>
+              <li>Specialized equipment sourcing</li>
+              <li>Technical service providers</li>
+              <li>Digital procurement platform</li>
+            </ul>
+          </div>
+          <div className="bg-gray-100 p-8 rounded-lg">
+            {/* Marketplace illustration */}
+          </div>
+        </section>
+
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
+            {/* Vendor management illustration */}
+          </div>
+          <div className="order-1 md:order-2">
+            <h2 className="text-2xl font-semibold mb-4">Vendor Excellence</h2>
+            <p className="text-gray-600 mb-4">
+              SmartFlow ensures comprehensive vendor management for petrochemical operations.
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>Chemical supplier qualification</li>
+              <li>Service provider certification</li>
+              <li>Quality assurance tracking</li>
+              <li>Safety compliance monitoring</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  )
+}

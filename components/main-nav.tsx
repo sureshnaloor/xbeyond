@@ -16,7 +16,7 @@ import { usePathname } from "next/navigation"
 import Logo from "@/components/logo"
 
 export default function MainNav({ className }: { className?: string }) {
-  const pathname = usePathname()
+  const pathname = usePathname()  // Add this line at the start of the component
   
   return (
     <NavigationMenu className={className}>
@@ -43,8 +43,8 @@ export default function MainNav({ className }: { className?: string }) {
                 </NavigationMenuLink>
               </li>
               <div className="col-span-3 space-y-3">
-                <ListItem href="/about/history" title="Our History">
-                  The journey that made us industry leaders
+                <ListItem href="/about/journey" title="Our Journey">
+                  The story that shaped our vision and solutions
                 </ListItem>
                 <ListItem href="/about/leadership" title="Leadership Team">
                   Meet the experts guiding our vision
@@ -56,6 +56,28 @@ export default function MainNav({ className }: { className?: string }) {
                   Industry standards we adhere to
                 </ListItem>
               </div>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Industries</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              <ListItem href="/industries/power" title="Power">
+                Digital solutions for power generation and distribution
+              </ListItem>
+              <ListItem href="/industries/oil-gas" title="Oil & Gas Upstream">
+                Optimizing upstream operations and asset management
+              </ListItem>
+              <ListItem href="/industries/refineries" title="Refineries & Mining">
+                Streamlining downstream operations and mining
+              </ListItem>
+              <ListItem href="/industries/petrochemicals" title="Petrochemicals">
+                Enhanced solutions for petrochemical facilities
+              </ListItem>
+              <ListItem href="/industries/infrastructure" title="Infrastructure & Green Energy">
+                Supporting sustainable infrastructure development
+              </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -84,25 +106,7 @@ export default function MainNav({ className }: { className?: string }) {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              <ListItem href="/projects/oil-gas" title="Oil & Gas Projects">
-                Offshore and onshore facilities
-              </ListItem>
-              <ListItem href="/projects/petrochemical" title="Petrochemical Projects">
-                Processing plants and refineries
-              </ListItem>
-              <ListItem href="/projects/power" title="Power Projects">
-                Substations and transmission systems
-              </ListItem>
-              <ListItem href="/projects/case-studies" title="Case Studies">
-                Detailed analysis of our successful projects
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+        {/* Remove Projects NavigationMenuItem */}
         <NavigationMenuItem>
           <Link href="/careers" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()} active={pathname === "/careers"}>

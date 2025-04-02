@@ -58,25 +58,26 @@ export default function RootLayout({
                 <div className="col-span-2">
                   <div className="font-bold text-xl mb-4">xBeyond</div>
                   <p className="text-gray-400 max-w-xs">
-                    Leading provider of comprehensive solutions for the Construction and EPC sectors worldwide.
+                    Empowering businesses with decades of industry expertise and innovative digital solutions.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-sm font-medium mb-4">Services</h3>
                   <ul className="space-y-2 text-sm text-gray-400">
-                    <li><Link href="/services/oil-gas" className="hover:text-white">Oil & Gas</Link></li>
-                    <li><Link href="/services/petrochemicals" className="hover:text-white">Petrochemicals</Link></li>
-                    <li><Link href="/services/manpower" className="hover:text-white">Manpower</Link></li>
-                    <li><Link href="/services/industrial" className="hover:text-white">Industrial Support</Link></li>
+                    <li><Link href="/services/smarttag" className="hover:text-white">Asset Management</Link></li>
+                    <li><Link href="/services/smartproject" className="hover:text-white">Project Management</Link></li>
+                    <li><Link href="/services/smartclass" className="hover:text-white">Materials Cataloguing</Link></li>
+                    <li><Link href="/services/smartlink" className="hover:text-white">Supply Chain Solutions</Link></li>
+                    <li><Link href="/services/smartwave" className="hover:text-white">E-marketplace</Link></li>
+                    <li><Link href="/services/smartflow" className="hover:text-white">Vendor Management</Link></li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-sm font-medium mb-4">Company</h3>
                   <ul className="space-y-2 text-sm text-gray-400">
                     <li><Link href="/about" className="hover:text-white">About Us</Link></li>
-                    <li><Link href="/projects" className="hover:text-white">Projects</Link></li>
                     <li><Link href="/careers" className="hover:text-white">Careers</Link></li>
-                    <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
+                    <li><Link href="/whyxbeyond" className="hover:text-white">Why xBeyond</Link></li>
                   </ul>
                 </div>
                 <div>
