@@ -1,3 +1,5 @@
+"use client"
+import { CldImage } from "next-cloudinary"
 export default function PowerIndustryPage() {
   return (
     <div className="container mx-auto py-12">
@@ -31,13 +33,25 @@ export default function PowerIndustryPage() {
             </ul>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg">
-            {/* Power equipment monitoring illustration */}
+          <CldImage
+              src="power1_a19vj7"
+              alt="Infrastructure supply chain"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </section>
 
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
-            {/* Project timeline illustration */}
+          <CldImage
+              src="projtimeline_vilwzn"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-2xl font-semibold mb-4">Project Management Transformation</h2>
@@ -67,13 +81,25 @@ export default function PowerIndustryPage() {
             </ul>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg">
-            {/* Materials catalog illustration */}
+          <CldImage
+              src="materailscatalogue_f54rhi"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </section>
 
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
-            {/* Supply chain illustration */}
+          <CldImage
+              src="power3_pjnwni"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-2xl font-semibold mb-4">Supply Chain Excellence</h2>
@@ -103,13 +129,25 @@ export default function PowerIndustryPage() {
             </ul>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg">
-            {/* Marketplace illustration */}
+          <CldImage
+              src="power4_uf6j6a"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </section>
 
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
-            {/* Vendor management illustration */}
+          <CldImage
+              src="power5_btnqsa"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-2xl font-semibold mb-4">Vendor Excellence</h2>

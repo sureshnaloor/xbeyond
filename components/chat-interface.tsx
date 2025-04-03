@@ -34,7 +34,12 @@ function formatMessage(content: string) {
 }
 
 export default function ChatInterface() {
-  const [messages, setMessages] = useState<Message[]>([])
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      role: 'assistant',
+      content: 'Welcome to xBeyond! How can I assist you today?'
+    }
+  ])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [sessionId] = useState(() => uuidv4())
@@ -43,16 +48,38 @@ export default function ChatInterface() {
   // Save chat to MongoDB whenever messages change
   useEffect(() => {
     if (messages.length > 0) {
-      fetch('/api/chat/save', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          sessionId,
-          messages,
-        }),
-      }).catch(error => console.error('Error saving chat:', error))
+      const saveChatWithRetry = async (retries = 3) => {
+        for (let i = 0; i < retries; i++) {
+          try {
+            const response = await fetch('/api/chat/save', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                sessionId,
+                messages,
+              }),
+            });
+            
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return; // Success, exit the retry loop
+          } catch (error) {
+            console.warn(`Attempt ${i + 1} failed:`, error);
+            if (i === retries - 1) {
+              console.error('Failed to save chat after all retries');
+            }
+            // Wait before retrying
+            await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
+          }
+        }
+      };
+
+      saveChatWithRetry().catch(error => 
+        console.error('Error in chat save retry mechanism:', error)
+      );
     }
-  }, [messages, sessionId])
+  }, [messages, sessionId]);
 
   useEffect(() => {
     if (scrollAreaRef.current) {
@@ -124,7 +151,7 @@ setMessages((prev: Message[]) => [...prev, userMessage as Message])
               <span className="w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0.2s]" />
               <span className="w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0.4s]" />
             </div>
-            <span className="text-sm">Thinking...</span>
+            <span className="text-sm">Typing...</span>
           </div>
         )}
       </ScrollArea>

@@ -1,3 +1,6 @@
+"use client"
+import {CldImage} from "next-cloudinary";
+
 export default function PetrochemicalsIndustryPage() {
   return (
     <div className="container mx-auto py-12">
@@ -32,13 +35,25 @@ export default function PetrochemicalsIndustryPage() {
             </ul>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg">
-            {/* Process equipment monitoring illustration */}
+          <CldImage
+              src="petrochem5_kxzbs9"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </section>
 
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
-            {/* Project management illustration */}
+          <CldImage
+              src="petrochem2_o1o6dh"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-2xl font-semibold mb-4">Project Management Transformation</h2>
@@ -68,13 +83,25 @@ export default function PetrochemicalsIndustryPage() {
             </ul>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg">
-            {/* Materials management illustration */}
+          <CldImage
+              src="petrochem6_oz4zer"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </section>
 
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
-            {/* Supply chain illustration */}
+          <CldImage
+              src="petrochem4_iwazbi"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-2xl font-semibold mb-4">Supply Chain Excellence</h2>
@@ -104,13 +131,25 @@ export default function PetrochemicalsIndustryPage() {
             </ul>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg">
-            {/* Marketplace illustration */}
+          <CldImage
+              src="petrochem7_e6wbo8"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </section>
 
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
-            {/* Vendor management illustration */}
+          <CldImage
+              src="petrochem3_kqumf0"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-2xl font-semibold mb-4">Vendor Excellence</h2>

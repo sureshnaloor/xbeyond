@@ -1,3 +1,7 @@
+"use client";
+import { CldImage } from "next-cloudinary";
+
+
 export default function OilGasIndustryPage() {
   return (
     <div className="container mx-auto py-12">
@@ -32,13 +36,25 @@ export default function OilGasIndustryPage() {
             </ul>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg">
-            {/* Illustration placeholder */}
+          <CldImage
+              src="oilgas1_t4plr9"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </section>
 
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
-            {/* Illustration placeholder */}
+          <CldImage
+              src="oilgas2_mkcpwe"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-2xl font-semibold mb-4">Drilling Project Excellence</h2>
@@ -68,13 +84,25 @@ export default function OilGasIndustryPage() {
             </ul>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg">
-            {/* Illustration placeholder */}
+          <CldImage
+              src="construction1_juh8gb"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </section>
 
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
-            {/* Illustration placeholder */}
+          <CldImage
+              src="construction5_dtkehx"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-2xl font-semibold mb-4">Supply Chain Optimization</h2>
@@ -104,13 +132,25 @@ export default function OilGasIndustryPage() {
             </ul>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg">
-            {/* Illustration placeholder */}
+          <CldImage
+              src="oilgas3_aiv0ak"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </section>
 
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 bg-gray-100 p-8 rounded-lg">
-            {/* Illustration placeholder */}
+          <CldImage
+              src="oilgas4_kon1zr"
+              alt="Green energy asset management"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-2xl font-semibold mb-4">Vendor Excellence</h2>
