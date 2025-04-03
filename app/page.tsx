@@ -3,6 +3,7 @@ import { ChevronRight, Database, Building2, BarChart2, Network, Contact, Wrench 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import MainNav from "@/components/main-nav"
+import { Power, Flame, Factory, Lightbulb, Hammer } from "lucide-react"
 import ChatButton from "@/components/chat-button"
 import ServiceCard from "@/components/service-card"
 import { CheckCircle, ArrowRight } from "lucide-react"
@@ -84,7 +85,6 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            {/* In the services section, update the ServiceCard components: */}
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
               <ServiceCard
                 title="Asset Management"
@@ -131,14 +131,96 @@ export default function Home() {
                 slogan="Maintain, Optimize, Excel"
                 description="Comprehensive maintenance, logistics, and operational support services backed by digital solutions for enhanced industrial performance."
                 iconName="Wrench"
-                bgClass="bg-gradient-to-br from-teal-500 via-emerald-400 to-green-400"
+                bgClass="bg-gradient-to-br from-purple-500 via-purple-400 to-pink-300"
                 tag="SMARTFLOW"
               />
             </div>
             <div className="flex justify-center mt-8">
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>
                 <Link href="/services">
-                  View All Services <ArrowRight className="ml-2 h-4 w-4" />
+                  Services <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Industries Section */}
+        <section className="w-full py-12 md:py-24 bg-slate-50">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Industries We Serve</h2>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Digital transformation solutions across key industrial sectors
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+              <Card className="group relative overflow-hidden rounded-xl bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100/50">
+                <CardHeader className="space-y-1">
+                  <Power className="h-8 w-8 text-teal-600 transform transition-transform group-hover:scale-110" />
+                  <CardTitle className="text-xl font-semibold bg-gradient-to-r from-teal-600 to-teal-800 bg-clip-text text-transparent">Power Generation</CardTitle>
+                </CardHeader>
+                <CardContent className="text-gray-600">
+                  Digital solutions for power plants and utilities, optimizing operations and maintenance
+                </CardContent>
+              </Card>
+
+              <Card className="group relative overflow-hidden rounded-xl bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100/50">
+                <CardHeader className="space-y-1">
+                  <Flame className="h-8 w-8 text-teal-600 transform transition-transform group-hover:scale-110" />
+                  <CardTitle className="text-xl font-semibold bg-gradient-to-r from-teal-600 to-teal-800 bg-clip-text text-transparent">Oil & Gas Upstream</CardTitle>
+                </CardHeader>
+                <CardContent className="text-gray-600">
+                  Solutions for exploration, drilling, and production operations
+                </CardContent>
+              </Card>
+
+              <Card className="group relative overflow-hidden rounded-xl bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100/50">
+                <CardHeader className="space-y-1">
+                  <Factory className="h-8 w-8 text-teal-600 transform transition-transform group-hover:scale-110" />
+                  <CardTitle className="text-xl font-semibold bg-gradient-to-r from-teal-600 to-teal-800 bg-clip-text text-transparent">Refineries & Mining</CardTitle>
+                </CardHeader>
+                <CardContent className="text-gray-600">
+                  Digital transformation for refining operations and mineral processing
+                </CardContent>
+              </Card>
+
+              <Card className="group relative overflow-hidden rounded-xl bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100/50">
+                <CardHeader className="space-y-1">
+                  <Building2 className="h-8 w-8 text-teal-600 transform transition-transform group-hover:scale-110" />
+                  <CardTitle className="text-xl font-semibold bg-gradient-to-r from-teal-600 to-teal-800 bg-clip-text text-transparent">Petrochemicals</CardTitle>
+                </CardHeader>
+                <CardContent className="text-gray-600">
+                  Integrated solutions for petrochemical plants and processing facilities
+                </CardContent>
+              </Card>
+
+              <Card className="group relative overflow-hidden rounded-xl bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100/50">
+                <CardHeader className="space-y-1">
+                  <Lightbulb className="h-8 w-8 text-teal-600 transform transition-transform group-hover:scale-110" />
+                  <CardTitle className="text-xl font-semibold bg-gradient-to-r from-teal-600 to-teal-800 bg-clip-text text-transparent">Infrastructure & Green Energy</CardTitle>
+                </CardHeader>
+                <CardContent className="text-gray-600">
+                  Smart solutions for infrastructure development and renewable energy projects
+                </CardContent>
+              </Card>
+
+              <Card className="group relative overflow-hidden rounded-xl bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100/50">
+                <CardHeader className="space-y-1">
+                  <Hammer className="h-8 w-8 text-teal-600 transform transition-transform group-hover:scale-110" />
+                  <CardTitle className="text-xl font-semibold bg-gradient-to-r from-teal-600 to-teal-800 bg-clip-text text-transparent">Construction & EPC</CardTitle>
+                </CardHeader>
+                <CardContent className="text-gray-600">
+                  Digital transformation solutions for construction and engineering projects
+                </CardContent>
+              </Card>
+            </div>
+            <div className="flex justify-center mt-8">
+              <Button size="lg" className="bg-teal-600 hover:bg-teal-700" asChild>
+                <Link href="/industries">
+                  Industries <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -221,12 +303,12 @@ export default function Home() {
                       fill="none"
                     />
                   </svg>
-                  <div className="space-y-2 max-w-[180px]">
+                  <div className="space-y-2 max-w-[220px]"> {/* Increased max-width */}
                     <p className="text-[14px] font-semibold text-primary italic leading-snug">
-                      "Let us do the juggling of your purchases,
+                      "Let us do the juggling of your non-core processes,
                     </p>
-                    <p className="text-[14px] font-bold text-secondary/80 italic leading-snug">
-                      let your CEO focus on core business"
+                    <p className="text-[14px] font-semibold text-primary italic leading-snug">
+                      while your team focuses on core business"
                     </p>
                   </div>
                 </div>

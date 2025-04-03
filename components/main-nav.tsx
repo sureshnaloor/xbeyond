@@ -78,6 +78,10 @@ export default function MainNav({ className }: { className?: string }) {
               <ListItem href="/industries/infrastructure" title="Infrastructure & Green Energy">
                 Supporting sustainable infrastructure development
               </ListItem>
+              {/* Add new Construction & EPC link */}
+              <ListItem href="/industries/construction" title="Construction & EPC">
+                Digital solutions for construction and EPC projects
+              </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

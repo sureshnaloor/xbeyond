@@ -75,13 +75,13 @@ export default function SmartTagPage() {
       </section>
 
       {/* Features Grid */}
-      <section className="w-full py-12 md:py-24 bg-white">
+      <section className="w-full py-12 md:py-24 bg-zinc-50">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg transition-shadow"
+                className="group relative overflow-hidden bg-gradient-to-br from-zinc-50 to-zinc-200 rounded-lg border p-6 hover:shadow-lg transition-shadow"
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>

@@ -30,10 +30,10 @@ export default function WhyXBeyondPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg transition-shadow"
+                className="group relative overflow-hidden rounded-lg border bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_12px_rgb(59,130,246,0.1)] hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <CheckCircle className="h-6 w-6 text-primary" />
+                  <CheckCircle className="h-6 w-6 text-primary group-hover:text-blue-600" />
                   <h3 className="text-xl font-semibold">{benefit.title}</h3>
                 </div>
                 <p className="text-gray-600">{benefit.description}</p>
@@ -51,10 +51,10 @@ export default function WhyXBeyondPage() {
             {risks.map((risk, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg bg-white p-6 hover:shadow-lg transition-shadow"
+                className="group relative overflow-hidden rounded-lg bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_12px_rgb(59,130,246,0.1)] hover:bg-gradient-to-br hover:from-purple-50 hover:to-blue-50"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Shield className="h-6 w-6 text-primary" />
+                  <Shield className="h-6 w-6 text-primary group-hover:text-purple-600" />
                   <h3 className="text-xl font-semibold">{risk.concern}</h3>
                 </div>
                 <p className="text-gray-600">{risk.solution}</p>
@@ -72,14 +72,14 @@ export default function WhyXBeyondPage() {
             {strategies.map((strategy, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg transition-shadow"
+                className="group relative overflow-hidden rounded-lg border bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_12px_rgb(59,130,246,0.1)] hover:bg-gradient-to-br hover:from-teal-50 hover:to-blue-50"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Lightbulb className="h-6 w-6 text-primary" />
+                  <Lightbulb className="h-6 w-6 text-primary group-hover:text-teal-600" />
                   <h3 className="text-xl font-semibold">{strategy.title}</h3>
                 </div>
                 <p className="text-gray-600 mb-4">{strategy.description}</p>
-                <Button variant="outline" size="sm" asChild>
+                <Button variant="outline" size="sm" asChild className="relative z-10">
                   <Link href={`/services/${strategy.id}`}>
                     Learn More <ChevronRight className="ml-2 h-4 w-4" />
                   </Link>

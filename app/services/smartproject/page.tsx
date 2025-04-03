@@ -30,7 +30,7 @@ export default function SmartProjectPage() {
           </p>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
             {platformFeatures.map((feature, index) => (
-              <div key={index} className="flex flex-col items-center text-center p-4">
+              <div key={index} className="flex flex-col items-center text-center p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_12px_rgb(59,130,246,0.1)] hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   {feature.icon}
                 </div>
@@ -50,7 +50,7 @@ export default function SmartProjectPage() {
             {keyFunctions.map((func, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg transition-shadow"
+                className="group relative overflow-hidden rounded-xl bg-white/80 backdrop-blur-sm p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_12px_rgb(59,130,246,0.1)] hover:bg-gradient-to-br hover:from-purple-50 hover:to-blue-50"
               >
                 <div className="flex items-center gap-2 mb-4">
                   {func.icon}
@@ -69,7 +69,7 @@ export default function SmartProjectPage() {
           <h2 className="text-3xl font-bold text-center mb-12">Challenges & Our Solutions</h2>
           <div className="grid gap-8 md:grid-cols-2">
             {challenges.map((challenge, index) => (
-              <div key={index} className="rounded-lg border p-6">
+              <div key={index} className="rounded-xl bg-white/80 backdrop-blur-sm p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_12px_rgb(59,130,246,0.1)] hover:bg-gradient-to-br hover:from-teal-50 hover:to-blue-50">
                 <h3 className="text-xl font-semibold mb-4">{challenge.title}</h3>
                 <ul className="list-disc pl-6 space-y-2 text-gray-600">
                   {challenge.points.map((point, idx) => (

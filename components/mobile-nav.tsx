@@ -134,6 +134,12 @@ export default function MobileNav() {
                         Infrastructure & Green Energy
                       </Link>
                     </SheetClose>
+                    {/* Add new Construction & EPC link */}
+                    <SheetClose asChild>
+                      <Link href="/industries/construction" className="py-2 px-4 hover:bg-accent rounded-md">
+                        Construction & EPC
+                      </Link>
+                    </SheetClose>
                   </div>
                 </AccordionContent>
               </AccordionItem>

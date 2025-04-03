@@ -81,11 +81,16 @@ export default function SmartLinkPage() {
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg transition-shadow"
+                className="group relative overflow-hidden rounded-xl bg-white/80 backdrop-blur-sm p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_12px_rgb(59,130,246,0.1)] hover:bg-gradient-to-br hover:from-slate-50 hover:to-blue-50 border border-gray-100/50"
               >
-                <div className="text-4xl mb-4">{solution.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+                <div className={`text-4xl mb-4 transform transition-transform group-hover:scale-110 ${solution.title === "Risk Management" ? "text-red-500" : ""}`}>
+                  {solution.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  {solution.title}
+                </h3>
                 <p className="text-gray-600">{solution.description}</p>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
               </div>
             ))}
           </div>

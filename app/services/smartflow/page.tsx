@@ -29,7 +29,7 @@ export default function SmartFlowPage() {
             {coreFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg transition-shadow"
+                className="group relative overflow-hidden rounded-xl bg-white/80 backdrop-blur-sm p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_12px_rgb(59,130,246,0.1)] hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50"
               >
                 <div className="flex items-center gap-2 mb-4">
                   {feature.icon}
@@ -51,7 +51,7 @@ export default function SmartFlowPage() {
           </p>
           <div className="grid gap-8 md:grid-cols-2">
             {portalFeatures.map((feature, index) => (
-              <div key={index} className="flex gap-4 items-start p-6 rounded-lg border bg-white">
+              <div key={index} className="flex gap-4 items-start p-6 rounded-xl bg-white/80 backdrop-blur-sm shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_12px_rgb(59,130,246,0.1)] hover:bg-gradient-to-br hover:from-purple-50 hover:to-blue-50">
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   {feature.icon}
                 </div>
@@ -71,7 +71,7 @@ export default function SmartFlowPage() {
           <h2 className="text-3xl font-bold text-center mb-12">Key Benefits</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit, index) => (
-              <div key={index} className="p-6 rounded-lg border">
+              <div key={index} className="p-6 rounded-xl bg-white/80 backdrop-blur-sm shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12),0_4px_12px_rgb(59,130,246,0.1)] hover:bg-gradient-to-br hover:from-teal-50 hover:to-blue-50">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   {benefit.icon}
                   {benefit.title}

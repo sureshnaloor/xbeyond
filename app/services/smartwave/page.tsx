@@ -22,7 +22,7 @@ export default function SmartWavePage() {
       </section>
 
       {/* Key Benefits */}
-      <section className="w-full py-12 md:py-24 bg-white">
+      <section className="w-full py-12 md:py-24 bg-slate-50">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Smart Procurement Solutions</h2>
           <div className="grid gap-8 md:grid-cols-2">
@@ -56,7 +56,7 @@ export default function SmartWavePage() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg transition-shadow"
+                className="group relative overflow-hidden rounded-lg border p-6 hover:shadow-lg bg-gradient-to-br from-slate-50 to-slate-200 transition-shadow"
               >
                 <div className="flex items-center gap-2 mb-4">
                   {feature.icon}
