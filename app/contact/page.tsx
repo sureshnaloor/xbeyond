@@ -1,40 +1,56 @@
 "use client"
 
 import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
+// import ReCAPTCHA from "react-google-recaptcha"
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, Send } from "lucide-react"
 
-export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+const contactSchema = z.object({
+  name: z.string().min(2, 'Name is required'),
+  email: z.string().email('Invalid email address'),
+  company: z.string().optional(),
+  phone: z.string().optional(),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
+})
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+//   const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+  
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+    resolver: zodResolver(contactSchema)
+  })
+
+  const onSubmit = async (data: any) => {
+    // if (!captchaToken) {
+    //   toast.error('Please complete the CAPTCHA')
+    //   return
+    // }
+
     setIsSubmitting(true)
     
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...data})
       })
       
       if (response.ok) {
-        alert('Thank you for your message. We will get back to you soon!')
-        setFormData({ name: '', email: '', company: '', phone: '', message: '' })
+        toast.success('Message sent successfully!')
+        reset()
+        // setCaptchaToken(null)
       } else {
         throw new Error('Failed to send message')
       }
     } catch (error) {
-      alert('Sorry, there was an error sending your message. Please try again.')
+      toast.error('Failed to send message. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -61,47 +77,49 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div>
                 <Input
+                  {...register('name')}
                   placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  required
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">{errors.name.message as string}</p>
+                )}
               </div>
               <div>
                 <Input
+                  {...register('email')}
                   type="email"
                   placeholder="Email Address"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  required
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email.message as string}</p>
+                )}
               </div>
               <div>
                 <Input
+                  {...register('company')}
                   placeholder="Company Name"
-                  value={formData.company}
-                  onChange={(e) => setFormData({...formData, company: e.target.value})}
                 />
               </div>
               <div>
                 <Input
+                  {...register('phone')}
                   placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
                 />
               </div>
               <div>
                 <Textarea
+                  {...register('message')}
                   placeholder="Your Message"
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  required
                   className="min-h-[150px]"
                 />
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message.message as string}</p>
+                )}
               </div>
+             
               <Button 
                 type="submit" 
                 className="w-full bg-teal-600 hover:bg-teal-700"
